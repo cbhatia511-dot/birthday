@@ -103,21 +103,28 @@ button {
   0% { transform: translateY(-10px); }
   100% { transform: translateY(100vh); }
 }
-</div>  <!-- cake-section ends -->
+.love-question {
+  margin-top: 40px;
+  position: relative;
+}
 
-<!-- 💖 LOVE QUESTION SECTION (ADD HERE) -->
-<div class="love-question">
-  <h2>Chhavi, Do You Love Me? ❤️</h2>
-  <button id="yesBtn">Yes 😍</button>
-  <button id="noBtn">No 😜</button>
-</div>
+#yesBtn, #noBtn {
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
 
-<h3 id="loveMessage" class="hidden">
-  I knew it! I Love You Moreeee ❤️😘
-</h3>
+#yesBtn {
+  background: #fff;
+  color: #ff4e88;
+}
 
-<canvas id="fireworks"></canvas>
-
-</div>  <!-- mainContent ends -->
-
+#noBtn {
+  background: black;
+  color: white;
+  position: absolute;
+}
 
