@@ -103,4 +103,21 @@ button {
   0% { transform: translateY(-10px); }
   100% { transform: translateY(100vh); }
 }
+</div>  <!-- cake-section ends -->
+
+<!-- 💖 LOVE QUESTION SECTION (ADD HERE) -->
+<div class="love-question">
+  <h2>Chhavi, Do You Love Me? ❤️</h2>
+  <button id="yesBtn">Yes 😍</button>
+  <button id="noBtn">No 😜</button>
+</div>
+
+<h3 id="loveMessage" class="hidden">
+  I knew it! I Love You Moreeee ❤️😘
+</h3>
+
+<canvas id="fireworks"></canvas>
+
+</div>  <!-- mainContent ends -->
+
 
