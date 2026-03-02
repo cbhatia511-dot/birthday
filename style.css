@@ -11,30 +11,35 @@ body {
   padding: 20px;
 }
 
-h1 {
-  font-size: 24px;
-}
-
-button {
-  padding: 12px 25px;
-  font-size: 16px;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  background: white;
-  color: #ff4e88;
-  margin-top: 15px;
-}
-
 .hidden {
   display: none;
 }
 
-/* Responsive */
-@media (min-width: 600px) {
-  h1 {
-    font-size: 36px;
-  }
+/* Gift */
+.gift-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.gift {
+  font-size: 100px;
+  cursor: pointer;
+  animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+/* Typewriter */
+#typeText {
+  font-size: 22px;
+  margin-top: 15px;
+  min-height: 30px;
 }
 
 /* Slider */
@@ -61,8 +66,13 @@ button {
   transition: transform 0.5s;
 }
 
-.cut {
-  transform: rotate(-20deg) scale(1.1);
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background: white;
+  color: #ff4e88;
+  cursor: pointer;
 }
 
 /* Fireworks */
@@ -73,4 +83,17 @@ button {
   width: 100%;
   height: 100%;
   pointer-events: none;
+}
+
+/* Falling Hearts */
+.hearts span {
+  position: fixed;
+  top: -10px;
+  font-size: 20px;
+  animation: fall 5s linear infinite;
+}
+
+@keyframes fall {
+  0% { transform: translateY(-10px); }
+  100% { transform: translateY(100vh); }
 }
