@@ -5,18 +5,18 @@ document.addEventListener("DOMContentLoaded", function () {
   const mainContent = document.getElementById("mainContent");
 
   /* OPEN GIFT */
-  window.openGift = function () {
-    giftBox.classList.add("hidden");
-    mainContent.classList.remove("hidden");
+ window.openGift = function () {
+  giftBox.style.display = "none";
+  mainContent.classList.remove("hidden");
 
-    // Force music play
-    music.currentTime = 0;
-    music.play().catch(() => {
-      console.log("Autoplay blocked. Tap again.");
-    });
+  // Scroll smoothly to main content
+  mainContent.scrollIntoView({ behavior: "smooth" });
 
-    startTypewriter();
-  };
+  music.currentTime = 0;
+  music.play().catch(() => {});
+
+  startTypewriter();
+};
 
   /* EXTRA MOBILE SAFE CLICK */
   document.body.addEventListener("click", function enableMusicOnce() {
@@ -99,3 +99,4 @@ document.addEventListener("DOMContentLoaded", function () {
   setInterval(createHeart, 300);
 
 });
+
