@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Chhavi ❤️</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Background Music -->
+<audio id="music" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<div class="container">
+
+<h1>Happy Birthday Meri Pyaari Jaan Chhavi 🎉❤️</h1>
+<p>From Your Loving Chirag 💕</p>
+
+<button onclick="startSurprise()">Click For Surprise 💝</button>
+
+<div id="surprise" class="hidden">
+
+  <h2>Happy Birthday Meri Pyaare Jaan 💖</h2>
+  <p>God bless you with all happiness and success ❤️</p>
+
+  <!-- Photo Slider -->
+  <div class="slider">
+    <img src="photo1.jpg" class="slide active">
+    <img src="photo2.jpg" class="slide">
+    <img src="photo3.jpg" class="slide">
+  </div>
+
+  <!-- Cake -->
+  <div class="cake-section">
+    <div id="cake" class="cake">🎂</div>
+    <button onclick="cutCake()" id="cutBtn">Cut The Cake 🎉</button>
+    <h3 id="cakeMessage" class="hidden">Yayyy! Cake Cut Successfully 🎂❤️</h3>
+  </div>
+
+  <!-- Fireworks Canvas -->
+  <canvas id="fireworks"></canvas>
+
+</div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
