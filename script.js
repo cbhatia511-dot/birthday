@@ -5,18 +5,15 @@ document.addEventListener("DOMContentLoaded", function () {
   const mainContent = document.getElementById("mainContent");
 
   /* OPEN GIFT */
- window.openGift = function () {
-  giftBox.style.display = "none";
-  mainContent.classList.remove("hidden");
+  window.openGift = function () {
+    giftBox.style.display = "none";
+    mainContent.classList.remove("hidden");
 
-  // Scroll smoothly to main content
-  mainContent.scrollIntoView({ behavior: "smooth" });
+    music.currentTime = 0;
+    music.play().catch(() => {});
 
-  music.currentTime = 0;
-  music.play().catch(() => {});
-
-  startTypewriter();
-};
+    startTypewriter();
+  };
 
   /* EXTRA MOBILE SAFE CLICK */
   document.body.addEventListener("click", function enableMusicOnce() {
@@ -98,5 +95,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
   setInterval(createHeart, 300);
 
-});
+  /* LOVE QUESTION TRAP */
+  const yesBtn = document.getElementById("yesBtn");
+  const noBtn = document.getElementById("noBtn");
+  const loveMessage = document.getElementById("loveMessage");
 
+  if (yesBtn && noBtn) {
+
+    yesBtn.addEventListener("click", function () {
+      loveMessage.classList.remove("hidden");
+      yesBtn.style.display = "none";
+      noBtn.style.display = "none";
+    });
+
+    noBtn.addEventListener("mouseover", function () {
+      const x = Math.random() * 300 - 150;
+      const y = Math.random() * 300 - 150;
+      noBtn.style.transform = `translate(${x}px, ${y}px)`;
+    });
+
+  }
+
+});
