@@ -4,16 +4,27 @@ document.addEventListener("DOMContentLoaded", function () {
   const giftBox = document.getElementById("giftBox");
   const mainContent = document.getElementById("mainContent");
 
+  /* OPEN GIFT */
   window.openGift = function () {
     giftBox.classList.add("hidden");
     mainContent.classList.remove("hidden");
 
-    music.play().catch(() => {});
+    // Force music play
+    music.currentTime = 0;
+    music.play().catch(() => {
+      console.log("Autoplay blocked. Tap again.");
+    });
 
     startTypewriter();
   };
 
-  /* Typewriter */
+  /* EXTRA MOBILE SAFE CLICK */
+  document.body.addEventListener("click", function enableMusicOnce() {
+    music.play().catch(() => {});
+    document.body.removeEventListener("click", enableMusicOnce);
+  });
+
+  /* TYPEWRITER */
   const text = "Chhavi I Love You So Much ❤️";
   let i = 0;
 
@@ -29,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
     type();
   }
 
-  /* Slider */
+  /* SLIDER */
   let index = 0;
   const slides = document.querySelectorAll(".slide");
 
@@ -39,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
     slides[index].classList.add("active");
   }, 2500);
 
-  /* Cake */
+  /* CAKE */
   window.cutCake = function () {
     document.getElementById("cake").style.transform =
       "rotate(-20deg) scale(1.1)";
@@ -47,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
     startFireworks();
   };
 
-  /* Fireworks */
+  /* FIREWORKS */
   const canvas = document.getElementById("fireworks");
   const ctx = canvas.getContext("2d");
   canvas.width = window.innerWidth;
@@ -68,13 +79,16 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  /* Falling Hearts */
+  /* FALLING HEARTS */
   function createHeart() {
     const heart = document.createElement("span");
     heart.innerHTML = "❤️";
+    heart.style.position = "fixed";
+    heart.style.top = "-10px";
     heart.style.left = Math.random() * 100 + "vw";
-    heart.style.animationDuration =
-      Math.random() * 3 + 2 + "s";
+    heart.style.fontSize = "20px";
+    heart.style.animation = "fall 5s linear";
+
     document.querySelector(".hearts").appendChild(heart);
 
     setTimeout(() => {
